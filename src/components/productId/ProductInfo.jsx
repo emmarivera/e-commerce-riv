@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './styles/productInfo.css'
 
 const ProductInfo = ({product}) => {
 
@@ -16,7 +17,7 @@ const ProductInfo = ({product}) => {
 
 
   return (
-    <article className='product__info'>
+    <article className='product-info'>
         <h2 className='product-info__title'>{product?.title}</h2>
         <p className="product-info__description">{product?.description}</p>
         <footer className="product-info__footer">

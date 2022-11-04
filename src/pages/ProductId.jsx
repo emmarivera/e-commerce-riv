@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ProductInfo from '../components/productId/ProductInfo'
 import SimilarProducts from '../components/productId/SimilarProducts'
+import SliderImgs from '../components/productId/SliderImgs'
 
 const ProductId = () => {
 
@@ -16,15 +17,15 @@ const ProductId = () => {
     .then(res => setProduct(res.data.data.product))
     .catch(err => console.log(err))
   }, [id])
-  
-  
-  console.log(product)
-  
+    
 
   return (
     <div>
+      {
+        product && <SliderImgs product={product}/>
+      }
       <ProductInfo product={product} />
-      <SimilarProducts productCategory={product?.category}/>
+      <SimilarProducts product={product} />
     </div>
   )
 }
